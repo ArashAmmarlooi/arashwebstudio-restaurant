@@ -104,7 +104,7 @@ export function MenuSection() {
                   className={`px-3 py-1.5 text-[10px] font-display uppercase tracking-wider transition-all duration-200 ${
                     active
                       ? 'bg-luxury-gold text-neutral-950 font-semibold'
-                      : 'bg-luxury-bg-secondary border border-luxury-border text-luxury-text-muted hover:border-luxury-gold/60'
+                      : 'bg-luxury-bg-secondary border border-luxury-border text-luxury-text-faint hover:text-luxury-gold hover:border-luxury-gold/60'
                   }`}
                 >
                   {filter.label}
@@ -128,7 +128,7 @@ export function MenuSection() {
                 className={`relative px-4 sm:px-6 py-3 shrink-0 font-display text-xs uppercase tracking-superwide transition-all duration-300 ${
                   isActive
                     ? 'text-luxury-gold font-semibold'
-                    : 'text-luxury-text-muted hover:text-luxury-text'
+                    : 'text-luxury-text-faint hover:text-luxury-gold'
                 }`}
               >
                 <span>{cat.label[language]}</span>

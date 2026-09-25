@@ -47,6 +47,10 @@ export function Navbar() {
     }
   };
 
+  // Over the cinematic hero the background is always dark — use light nav chrome
+  // even in light mode so links stay readable (theme tokens alone are too dark).
+  const overHero = !scrolled;
+
   return (
     <>
       <header
@@ -62,18 +66,38 @@ export function Navbar() {
             href="/"
             data-cursor-hover
             data-cursor-text="HOME"
-            className="group flex items-center gap-3 text-luxury-text focus:outline-none"
+            className={`group flex items-center gap-3 focus:outline-none transition-colors duration-300 ${
+              overHero ? 'text-white' : 'text-luxury-text'
+            }`}
           >
-            <div className="relative w-9 h-9 flex items-center justify-center rounded-full border border-luxury-gold/40 group-hover:border-luxury-gold transition-colors duration-300">
-              <span className="font-serif text-lg tracking-widest text-luxury-gold italic font-light">
+            <div
+              className={`relative w-9 h-9 flex items-center justify-center rounded-full border transition-colors duration-300 ${
+                overHero
+                  ? 'border-white/35 group-hover:border-luxury-gold-light'
+                  : 'border-luxury-gold/40 group-hover:border-luxury-gold'
+              }`}
+            >
+              <span
+                className={`font-serif text-lg tracking-widest italic font-light ${
+                  overHero ? 'text-luxury-gold-light' : 'text-luxury-gold'
+                }`}
+              >
                 M
               </span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-sm sm:text-base tracking-superwide uppercase font-medium leading-none group-hover:text-luxury-gold transition-colors duration-300">
+              <span
+                className={`font-display text-sm sm:text-base tracking-superwide uppercase font-medium leading-none transition-colors duration-300 ${
+                  overHero ? 'group-hover:text-luxury-gold-light' : 'group-hover:text-luxury-gold'
+                }`}
+              >
                 Maison Céleste
               </span>
-              <span className="font-serif text-[9px] tracking-widest text-luxury-gold uppercase mt-0.5">
+              <span
+                className={`font-serif text-[9px] tracking-widest uppercase mt-0.5 ${
+                  overHero ? 'text-luxury-gold-light' : 'text-luxury-gold'
+                }`}
+              >
                 Montréal
               </span>
             </div>
@@ -90,7 +114,11 @@ export function Navbar() {
                   handleLinkClick(link.href);
                 }}
                 data-cursor-hover
-                className="group relative font-display text-[11px] uppercase tracking-superwide text-luxury-text-muted hover:text-luxury-text transition-colors duration-300 py-1"
+                className={`group relative font-display text-[11px] uppercase tracking-superwide transition-colors duration-300 py-1 ${
+                  overHero
+                    ? 'text-white/80 hover:text-white'
+                    : 'text-luxury-text-muted hover:text-luxury-text'
+                }`}
               >
                 <span>{link.label}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-luxury-gold group-hover:w-full transition-all duration-300" />
@@ -101,7 +129,13 @@ export function Navbar() {
           {/* Desktop Right Controls (Language, Theme, Reserve CTA) */}
           <div className="hidden lg:flex items-center gap-4 sm:gap-5">
             {/* Language Switcher */}
-            <div className="flex items-center rounded-full border border-luxury-border p-1 bg-luxury-bg/50 backdrop-blur-sm text-[11px] font-display font-medium">
+            <div
+              className={`flex items-center rounded-full border p-1 backdrop-blur-sm text-[11px] font-display font-medium transition-colors duration-300 ${
+                overHero
+                  ? 'border-white/25 bg-black/25'
+                  : 'border-luxury-border bg-luxury-bg/50'
+              }`}
+            >
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
@@ -109,7 +143,9 @@ export function Navbar() {
                 className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
                   language === 'en'
                     ? 'bg-luxury-gold text-neutral-950 font-semibold shadow-sm'
-                    : 'text-luxury-text-muted hover:text-luxury-text'
+                    : overHero
+                      ? 'text-white/75 hover:text-white'
+                      : 'text-luxury-text-muted hover:text-luxury-text'
                 }`}
               >
                 EN
@@ -121,7 +157,9 @@ export function Navbar() {
                 className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
                   language === 'fr'
                     ? 'bg-luxury-gold text-neutral-950 font-semibold shadow-sm'
-                    : 'text-luxury-text-muted hover:text-luxury-text'
+                    : overHero
+                      ? 'text-white/75 hover:text-white'
+                      : 'text-luxury-text-muted hover:text-luxury-text'
                 }`}
               >
                 FR
@@ -135,7 +173,11 @@ export function Navbar() {
               data-cursor-hover
               data-cursor-text="THEME"
               aria-label="Toggle luxury theme"
-              className="p-2 rounded-full border border-luxury-border text-luxury-text-muted hover:text-luxury-gold hover:border-luxury-gold transition-colors duration-300 bg-luxury-bg/50"
+              className={`p-2 rounded-full border transition-colors duration-300 ${
+                overHero
+                  ? 'border-white/25 bg-black/25 text-white/80 hover:text-luxury-gold-light hover:border-luxury-gold-light'
+                  : 'border-luxury-border bg-luxury-bg/50 text-luxury-text-muted hover:text-luxury-gold hover:border-luxury-gold'
+              }`}
             >
               {theme === 'dark' ? (
                 <Sun className="w-4 h-4" />
@@ -173,7 +215,11 @@ export function Navbar() {
               type="button"
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-full border border-luxury-border text-luxury-text-muted"
+              className={`p-2 rounded-full border ${
+                overHero
+                  ? 'border-white/25 text-white/80'
+                  : 'border-luxury-border text-luxury-text-muted'
+              }`}
             >
               {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
@@ -183,7 +229,9 @@ export function Navbar() {
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
-              className="p-2 text-luxury-text hover:text-luxury-gold focus:outline-none transition-colors"
+              className={`p-2 focus:outline-none transition-colors ${
+                overHero ? 'text-white hover:text-luxury-gold-light' : 'text-luxury-text hover:text-luxury-gold'
+              }`}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
             </button>

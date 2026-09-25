@@ -6,9 +6,9 @@
   --bg-primary: #FAF8F5;
   --bg-secondary: #F2EDE4;
   --bg-tertiary: #E8E1D5;
-  --text-primary: #151413;
-  --text-muted: #5C564E;
-  --text-faint: #8E877D;
+  --text-primary: #2A2826;
+  --text-muted: #6F6860;
+  --text-faint: #948C82;
   --accent-gold: #9F7B3E;
   --accent-gold-light: #C4A36B;
   --accent-gold-dark: #7A5B26;
@@ -16,6 +16,10 @@
   --border-gold: rgba(159, 123, 62, 0.28);
   --card-bg: rgba(255, 255, 255, 0.85);
   --overlay-bg: rgba(250, 248, 245, 0.92);
+  /* Hero is always on a dark cinematic plate — keep champagne legible in light mode */
+  --hero-gold: #D6B265;
+  --hero-gold-bright: #EBD498;
+  --hero-gold-dim: rgba(235, 212, 152, 0.45);
 }
 
 .dark {
@@ -32,6 +36,33 @@
   --border-gold: rgba(214, 178, 101, 0.3);
   --card-bg: rgba(18, 18, 21, 0.75);
   --overlay-bg: rgba(10, 10, 11, 0.94);
+  --hero-gold: #D6B265;
+  --hero-gold-bright: #EBD498;
+  --hero-gold-dim: rgba(235, 212, 152, 0.45);
+}
+
+.text-hero-gold {
+  color: var(--hero-gold);
+}
+
+.text-hero-gold-bright {
+  color: var(--hero-gold-bright);
+}
+
+.border-hero-gold-dim {
+  border-color: var(--hero-gold-dim);
+}
+
+.border-hero-gold {
+  border-color: var(--hero-gold);
+}
+
+.bg-hero-gold {
+  background-color: var(--hero-gold);
+}
+
+.text-hero-gold-dim {
+  color: var(--hero-gold-dim);
 }
 
 html {

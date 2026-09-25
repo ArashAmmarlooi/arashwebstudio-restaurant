@@ -70,13 +70,13 @@ export function HeroSection() {
         transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10 flex flex-wrap items-center justify-center gap-4 sm:gap-8 px-4"
       >
-        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-display uppercase tracking-widest text-luxury-gold/90">
-          <Award className="w-3.5 h-3.5" />
+        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-display uppercase tracking-widest text-hero-gold-bright">
+          <Award className="w-3.5 h-3.5 text-hero-gold" />
           <span>{t.hero.badge1}</span>
         </div>
-        <span className="hidden sm:inline text-luxury-gold/40">·</span>
-        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-display uppercase tracking-widest text-luxury-gold/90">
-          <Sparkles className="w-3.5 h-3.5" />
+        <span className="hidden sm:inline text-hero-gold-dim">·</span>
+        <div className="flex items-center gap-2 text-[10px] sm:text-xs font-display uppercase tracking-widest text-hero-gold-bright">
+          <Sparkles className="w-3.5 h-3.5 text-hero-gold" />
           <span>{t.hero.badge2}</span>
         </div>
       </motion.div>
@@ -93,7 +93,7 @@ export function HeroSection() {
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="mb-4 sm:mb-6"
         >
-          <span className="font-display text-[10px] sm:text-xs uppercase text-luxury-gold tracking-superwide font-medium">
+          <span className="font-display text-[10px] sm:text-xs uppercase text-hero-gold-bright tracking-superwide font-medium">
             {t.hero.subtitle}
           </span>
         </motion.div>
@@ -106,7 +106,7 @@ export function HeroSection() {
           className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[#F8F5EE] font-normal tracking-tight leading-[0.95]"
         >
           <span className="block">{t.hero.titleLine1}</span>
-          <span className="block italic text-luxury-gold font-light mt-1 sm:mt-2">
+          <span className="block italic text-hero-gold font-light mt-1 sm:mt-2">
             {t.hero.titleLine2}
           </span>
         </motion.h1>
@@ -168,9 +168,9 @@ export function HeroSection() {
       >
         {/* Left Feature */}
         <div className="hidden md:flex items-center gap-3 text-left">
-          <span className="w-2 h-2 rounded-full bg-luxury-gold animate-ping" />
+          <span className="w-2 h-2 rounded-full bg-hero-gold animate-ping" />
           <div>
-            <p className="font-display text-[10px] uppercase tracking-wider text-luxury-gold">
+            <p className="font-display text-[10px] uppercase tracking-wider text-hero-gold-bright">
               {t.hero.stats.stars}
             </p>
             <p className="text-[11px] text-neutral-400">
@@ -184,7 +184,7 @@ export function HeroSection() {
           type="button"
           onClick={scrollToStory}
           data-cursor-hover
-          className="group flex flex-col items-center gap-2 text-neutral-400 hover:text-luxury-gold transition-colors focus:outline-none"
+          className="group flex flex-col items-center gap-2 text-neutral-400 hover:text-hero-gold-bright transition-colors focus:outline-none"
         >
           <span className="font-display text-[10px] tracking-superwide uppercase">
             {t.hero.scrollPrompt}
@@ -192,23 +192,23 @@ export function HeroSection() {
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-            className="w-7 h-7 rounded-full border border-luxury-gold/30 flex items-center justify-center group-hover:border-luxury-gold"
+            className="w-7 h-7 rounded-full border border-hero-gold-dim flex items-center justify-center group-hover:border-hero-gold"
           >
-            <ArrowDown className="w-3.5 h-3.5 text-luxury-gold" />
+            <ArrowDown className="w-3.5 h-3.5 text-hero-gold" />
           </motion.div>
         </button>
 
         {/* Right Feature */}
         <div className="hidden md:flex items-center gap-3 text-right">
           <div>
-            <p className="font-display text-[10px] uppercase tracking-wider text-luxury-gold">
+            <p className="font-display text-[10px] uppercase tracking-wider text-hero-gold-bright">
               {t.hero.stats.bottles}
             </p>
             <p className="text-[11px] text-neutral-400">
               Grand Cru & Biodynamic Vault
             </p>
           </div>
-          <span className="w-2 h-2 rounded-full bg-luxury-gold/50" />
+          <span className="w-2 h-2 rounded-full bg-hero-gold opacity-50" />
         </div>
       </motion.div>
     </section>
