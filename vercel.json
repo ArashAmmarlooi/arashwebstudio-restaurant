@@ -1,5 +1,5 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/restaurant-demo", "permanent": false }
+    { "source": "/", "destination": "/restaurant-demo/", "permanent": false }
   ]
 }

@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: '/restaurant-demo',
+  trailingSlash: true,
   images: {
     remotePatterns: [
       {
